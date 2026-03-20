@@ -15,7 +15,7 @@ public function index()
 public function view($id)
     {
         $db = new Db();
-        $article = $db->query('SELECT * FROM `articles` WHERE id =:id;', [':id' => $id]);
+        $article = $db->query('SELECT * FROM `articles` WHERE id =:id;', [':id' => $id])[0];
         $this->view->renderHtml('articles/view.php', ['article' => $article]);
     }
 }
