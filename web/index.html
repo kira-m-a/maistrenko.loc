@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статьи — Basic Auth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div style="max-width: 600px; margin: 0 auto 20px auto; padding: 15px; background: white;">
+        <div id="guestPanel">
+            <button type="button" id="showLoginBtn" class="btn btn-primary">Войти</button>
+        </div>
+
+        <div id="userPanel" style="display: none;">
+            <span>Вы вошли как: <strong id="userName"></strong></span>
+            <button type="button" id="logoutBtn" class="btn btn-secondary">Выход</button>
+        </div>
+
+        <form id="loginForm" style="display: none; margin-top: 15px; padding: 0;">
+            <div class="mb-3">
+                <label class="form-label">login</label>
+                <input type="text" id="loginEmail" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Пароль</label>
+                <input type="password" id="loginPassword" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Войти</button>
+            <div id="loginError" style="color: red !important; margin-top: 10px;"></div>
+        </form>
+    </div>
+    <form id="articleForm">
+        <div class="mb-3">
+            <label for="inputName" class="form-label">Название статьи</label>
+            <input type="text" id="inputName" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="inputText" class="form-label">Текст статьи</label>
+            <textarea id="inputText" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="inputImg" class="form-label">Изображение</label>
+            <input type="file" id="inputImg" class="form-control">
+        </div>
+        <input type="submit" id="submitBtn" class="btn btn-primary" value="Создать статью">
+        <button type="button" id="cancelBtn" class="btn btn-secondary" style="display: none;" onclick="resetFormMode()">Отмена</button>
+    </form>
+
+    <ul class="articles"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
